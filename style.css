@@ -1,0 +1,353 @@
+/* General Styles and Professional Setup */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); /* خط Poppins احترافي وأنيق */
+
+:root {
+    --primary-color: #4A4E69;   /* Deep Grey/Violet - For titles, logos */
+    --accent-color: #A74B66;    /* Berry/Rose - For buttons, highlights */
+    --text-color: #333333;
+    --light-bg: #F4F4F9;        /* Light Grey Background */
+    --white-bg: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    direction: ltr;
+    text-align: left;
+    background-color: var(--white-bg);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ################## HEADER (Sticky & Clean) ################## */
+header {
+    background: var(--white-bg);
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--accent-color); /* Logo color using accent */
+}
+
+header nav ul {
+    display: flex;
+    gap: 35px;
+}
+
+header nav a {
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+/* Underline effect on hover */
+header nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease-out;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+.header-icons i {
+    font-size: 1.3rem;
+    margin-left: 20px;
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+.header-icons i:hover {
+    color: var(--accent-color);
+}
+
+/* ################## BUTTONS (3D Look) ################## */
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px; /* Pill shape for modern look */
+    margin-top: 25px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(167, 75, 102, 0.4); /* Shadow accent */
+}
+
+.btn:hover {
+    background: #8b3c61;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(167, 75, 102, 0.6);
+}
+
+/* ################## SECTIONS (General) ################## */
+section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color); /* Accent underline */
+}
+
+/* ################## HERO SECTION (Elegant Gradient) ################## */
+.hero-section {
+    /* Subtle gradient as background */
+    background: linear-gradient(135deg, var(--light-bg) 0%, #E7E7EE 100%);
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--primary-color);
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.hero-content {
+    max-width: 550px;
+    padding: 40px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    color: #666;
+}
+
+/* ################## PRODUCTS SECTION (Cards) ################## */
+.products-section {
+    background-color: var(--light-bg);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-card {
+    background: var(--white-bg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Softer, deeper shadow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-8px); /* More pronounced lift */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: var(--secondary-color); /* Using the old secondary for placeholders */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.product-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.product-card .price {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.add-to-cart-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 500;
+}
+
+.add-to-cart-btn:hover {
+    background: #3c4059;
+}
+
+/* ################## ABOUT US & CONTACT SECTIONS ################## */
+.about-section {
+    background-color: var(--white-bg);
+}
+
+.about-section p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.contact-section {
+    background-color: var(--light-bg);
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+    background: var(--white-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-section input,
+.contact-section textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(167, 75, 102, 0.3);
+}
+
+.contact-section textarea {
+    resize: vertical;
+}
+
+/* ################## FOOTER (Dark & Solid) ################## */
+footer {
+    background: var(--primary-color); /* Using dark primary color for footer */
+    color: var(--light-bg);
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons i {
+    font-size: 1.6rem;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: var(--light-bg);
+}
+
+.social-icons i:hover {
+    color: var(--accent-color);
+}
+
+/* ################## RESPONSIVE DESIGN ################## */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    header nav ul {
+        gap: 15px;
+    }
+
+    .hero-section {
+        height: 450px;
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    section {
+        padding: 50px 5%;
+    }
+}
