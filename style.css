@@ -1,11 +1,12 @@
-/* General Styles and Professional Setup */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); /* خط Poppins احترافي وأنيق */
+/* General Styles and Professional Setup - Updated for Grey Tones */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); 
 
 :root {
-    --primary-color: #4A4E69;   /* Deep Grey/Violet - For titles, logos */
-    --accent-color: #A74B66;    /* Berry/Rose - For buttons, highlights */
+    --primary-color: #3A405A;   /* Dark Grey/Slate Blue - Titles, Text */
+    --accent-color: #A74B66;    /* Deep Berry/Rose - Buttons, Highlights */
     --text-color: #333333;
-    --light-bg: #F4F4F9;        /* Light Grey Background */
+    --light-grey-bg: #F5F5F7;   /* Very Light Grey Background */
+    --mid-grey-bg: #EAEAEB;    /* Slightly Darker Grey Background */
     --white-bg: #FFFFFF;
 }
 
@@ -34,23 +35,24 @@ ul {
     list-style: none;
 }
 
-/* ################## HEADER (Sticky & Clean) ################## */
+/* ################## HEADER (Clean and Elevated) ################## */
 header {
     background: var(--white-bg);
     padding: 18px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04); 
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .logo {
-    font-size: 1.9rem;
+    font-size: 2.0rem; /* Bigger logo */
     font-weight: 700;
-    color: var(--accent-color); /* Logo color using accent */
+    color: var(--primary-color); 
+    letter-spacing: 1px;
 }
 
 header nav ul {
@@ -60,18 +62,23 @@ header nav ul {
 
 header nav a {
     color: var(--primary-color);
-    font-weight: 600;
+    font-weight: 500;
     padding: 5px 0;
     position: relative;
+    transition: color 0.3s;
 }
 
-/* Underline effect on hover */
+header nav a:hover {
+    color: var(--accent-color); /* Highlight text on hover */
+}
+
+/* Accent Line under navigation on hover */
 header nav a::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 2px;
-    bottom: -5px;
+    height: 3px;
+    bottom: -8px;
     left: 0;
     background-color: var(--accent-color);
     transition: width 0.3s ease-out;
@@ -82,8 +89,8 @@ header nav a:hover::after {
 }
 
 .header-icons i {
-    font-size: 1.3rem;
-    margin-left: 20px;
+    font-size: 1.4rem;
+    margin-left: 25px;
     cursor: pointer;
     color: var(--primary-color);
     transition: color 0.3s;
@@ -93,40 +100,41 @@ header nav a:hover::after {
     color: var(--accent-color);
 }
 
-/* ################## BUTTONS (3D Look) ################## */
+/* ################## BUTTONS (Accent Focus) ################## */
 .btn {
     display: inline-block;
-    background: var(--accent-color);
+    background: var(--accent-color); /* Highlight color */
     color: white;
-    padding: 12px 30px;
-    border-radius: 50px; /* Pill shape for modern look */
+    padding: 14px 35px; /* Larger padding */
+    border-radius: 50px; 
     margin-top: 25px;
     transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
     border: none;
     cursor: pointer;
     font-weight: 600;
-    box-shadow: 0 4px 10px rgba(167, 75, 102, 0.4); /* Shadow accent */
+    text-transform: uppercase;
+    box-shadow: 0 6px 15px rgba(167, 75, 102, 0.3); 
 }
 
 .btn:hover {
     background: #8b3c61;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(167, 75, 102, 0.6);
+    transform: translateY(-3px); /* More dramatic lift */
+    box-shadow: 0 8px 20px rgba(167, 75, 102, 0.5);
 }
 
 /* ################## SECTIONS (General) ################## */
 section {
-    padding: 80px 5%;
+    padding: 90px 5%;
     text-align: center;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 50px;
     color: var(--primary-color);
     font-weight: 700;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 h2::after {
@@ -135,78 +143,83 @@ h2::after {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent-color); /* Accent underline */
+    width: 80px; /* Longer underline */
+    height: 4px; /* Thicker underline */
+    background-color: var(--accent-color);
+    border-radius: 2px;
 }
 
-/* ################## HERO SECTION (Elegant Gradient) ################## */
+/* ################## HERO SECTION (Subtle Gradient Background) ################## */
 .hero-section {
-    /* Subtle gradient as background */
-    background: linear-gradient(135deg, var(--light-bg) 0%, #E7E7EE 100%);
-    height: 600px;
+    /* Soft grey gradient for a luxurious feel */
+    background: linear-gradient(135deg, var(--light-grey-bg) 0%, var(--mid-grey-bg) 100%);
+    height: 650px; /* Taller hero section */
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: var(--primary-color);
     text-align: left;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #d0d0d0;
 }
 
 .hero-content {
-    max-width: 550px;
+    max-width: 600px;
     padding: 40px;
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 15px;
+    font-size: 4.5rem;
+    margin-bottom: 20px;
     color: var(--primary-color);
+    line-height: 1.1;
 }
 
 .hero-content p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: #666;
 }
 
-/* ################## PRODUCTS SECTION (Cards) ################## */
+/* ################## PRODUCTS SECTION (Cards with White Backgrounds) ################## */
 .products-section {
-    background-color: var(--light-bg);
+    background-color: var(--white-bg); /* White background for product section */
+    padding-bottom: 90px;
 }
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    gap: 40px; /* Wider gap */
 }
 
 .product-card {
-    background: var(--white-bg);
+    background: var(--light-grey-bg); /* Use light grey background for cards */
     border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Softer, deeper shadow */
+    padding: 0; /* Remove padding here to make image edge-to-edge */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); 
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     text-align: center;
+    overflow: hidden; /* Important for sharp borders */
 }
 
 .product-card:hover {
-    transform: translateY(-8px); /* More pronounced lift */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px); 
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
 }
 
-.image-placeholder {
+.product-image {
     width: 100%;
-    height: 250px;
-    background-color: var(--secondary-color); /* Using the old secondary for placeholders */
-    border-radius: 8px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    color: var(--primary-color);
-    font-size: 1.1rem;
+    height: 300px; /* Taller images */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+    border-radius: 12px 12px 0 0; /* Rounded top corners only */
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.product-card-body {
+    padding: 25px;
 }
 
 .product-card h3 {
@@ -218,41 +231,44 @@ h2::after {
 
 .product-card .price {
     color: var(--accent-color);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
 .add-to-cart-btn {
+    /* Style the button differently for card look */
     background: var(--primary-color);
     color: white;
     border: none;
-    padding: 10px 25px;
-    border-radius: 5px;
+    padding: 12px 30px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s;
-    font-weight: 500;
+    font-weight: 600;
+    width: 100%; /* Full width button in card */
 }
 
 .add-to-cart-btn:hover {
-    background: #3c4059;
+    background: var(--accent-color);
 }
+
 
 /* ################## ABOUT US & CONTACT SECTIONS ################## */
 .about-section {
-    background-color: var(--white-bg);
+    background-color: var(--mid-grey-bg); /* Use mid-grey for contrast */
 }
 
 .about-section p {
     max-width: 900px;
     margin: 0 auto;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     line-height: 1.8;
     color: #555;
 }
 
 .contact-section {
-    background-color: var(--light-bg);
+    background-color: var(--light-grey-bg);
 }
 
 .contact-section form {
@@ -263,15 +279,15 @@ h2::after {
     gap: 20px;
     text-align: left;
     background: var(--white-bg);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .contact-section input,
 .contact-section textarea {
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
@@ -283,18 +299,14 @@ h2::after {
 .contact-section textarea:focus {
     border-color: var(--accent-color);
     outline: none;
-    box-shadow: 0 0 5px rgba(167, 75, 102, 0.3);
+    box-shadow: 0 0 8px rgba(167, 75, 102, 0.3);
 }
 
-.contact-section textarea {
-    resize: vertical;
-}
-
-/* ################## FOOTER (Dark & Solid) ################## */
+/* ################## FOOTER (Dark Slate) ################## */
 footer {
-    background: var(--primary-color); /* Using dark primary color for footer */
-    color: var(--light-bg);
-    padding: 40px 5%;
+    background: var(--primary-color); 
+    color: var(--light-grey-bg);
+    padding: 50px 5%;
     text-align: center;
 }
 
@@ -305,11 +317,11 @@ footer {
 }
 
 .social-icons i {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin-left: 20px;
     cursor: pointer;
     transition: color 0.3s;
-    color: var(--light-bg);
+    color: var(--light-grey-bg);
 }
 
 .social-icons i:hover {
@@ -318,36 +330,24 @@ footer {
 
 /* ################## RESPONSIVE DESIGN ################## */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 5%;
-    }
-
-    header nav ul {
-        gap: 15px;
-    }
-
-    .hero-section {
-        height: 450px;
-    }
-
-    .hero-content {
-        text-align: center;
-        max-width: 100%;
-        padding: 20px;
-    }
-
+    /* Adjustments for smaller screens */
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 
-    .footer-content {
-        flex-direction: column;
-        gap: 20px;
+    .hero-content p {
+        font-size: 1.3rem;
+    }
+    
+    .product-card {
+        padding: 0;
     }
 
-    section {
-        padding: 50px 5%;
+    .product-image {
+        height: 250px;
+    }
+
+    .product-card-body {
+        padding: 20px;
     }
 }
